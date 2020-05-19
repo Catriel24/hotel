@@ -1,0 +1,462 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #565656;
+    /* COLOR AL BODY Y TIPOGRAFIA  */
+}
+
+.holder {
+    /* ANCHO DE LA PAGINA, Y CENTRADO */
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+}
+
+
+/* INICIO HEADER */
+
+.rectangulo {
+    /* RECTANGULO GRIS (INICIO) */
+    width: 960px;
+    height: 205px;
+    background-color: #d1d1d1;
+    display: block;
+    position: relative;
+    /* RECTANGULO GRIS (FIN) */
+}
+
+.logo {
+    /* LOGO EN RECTANGULO (INICIO) */
+    width: 140px;
+    display: inline-block;
+    position: absolute;
+    left: 100px;
+    top: 85px;
+    /* LOGO EN RECTANGULO (FIN) */
+}
+
+.container {
+    /* ICONOS REDES SOCIALES */
+    width: 20%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    right: 30px;
+    top: 110px;
+}
+
+
+/* FIN HEADER */
+
+
+/* INICIO MENU */
+
+.menu {
+    /* MENU FIJO PARA QUE RECORRA LA PAGINA, CON SOMBRA ALREDEDOR Y Z-INDEX PARA QUE LA CAPA ESTE POR ENCIMA */
+    display: inline-block;
+    width: 627px;
+    height: 45px;
+    background-color: #565656;
+    box-shadow: 2px -3px 4px rgb(133, 133, 133);
+    position: fixed;
+    top: 15px;
+    z-index: 1;
+}
+
+.menu_lista {
+    /* ITEMS DEL MENU-DISTRIBUIDOS */
+    padding: 0;
+    list-style: none;
+    margin-right: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.item {
+    /* SACA LA DECORACION A LOS ITEMS, TAMAÑO DE FUENTE Y COLOR */
+    text-decoration: none;
+    font-weight: 500;
+    color: rgb(218, 218, 218);
+}
+
+a:hover {
+    /* APLICA HOVER EN ITEMS DEL MENU */
+    color: black;
+    transition: .8s;
+}
+
+
+/* FIN MENU */
+
+
+/* INICIO IMAGEN HOME */
+
+.home {
+    /* BLOQUE A LA IMAGEN, PARA QUE SE PEGUE A NOSOTROS */
+    display: block;
+}
+
+
+/* FIN HOME */
+
+
+/* INICIO NOSOTROS */
+
+.contenedor_nosotros {
+    /* RECTANGULO CONTENEDOR NOSOTROS */
+    width: 960px;
+    height: 700px;
+    background-color: #979797;
+    display: block;
+}
+
+.titulo_secundario {
+    font-size: 30px;
+    text-align: left;
+    margin: auto;
+    margin-left: 130px;
+    padding-top: 75px;
+    width: 75%;
+    color: white;
+}
+
+.texto_secundario {
+    width: 70%;
+    font-weight: 300;
+    font-style: oblique;
+    text-align: left;
+    margin: 30px auto 40px 80px;
+    padding: 0 50px 0 50px;
+}
+
+.nosotros_iconos {
+    /* ICONOS DISTRIBUIDOS CON GRID EN 4 COLUMNAS */
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-items: center;
+    grid-row-gap: 20px;
+    padding: 0 100px 0 100px;
+}
+
+.nosotros_iconos>.icono1:hover,
+.nosotros_iconos>.icono2:hover,
+.nosotros_iconos>.icono3:hover,
+.nosotros_iconos>.icono4:hover,
+.nosotros_iconos>.icono5:hover,
+.nosotros_iconos>.icono6:hover,
+.nosotros_iconos>.icono7:hover,
+.nosotros_iconos>.icono8:hover {
+    /* TRANSFORMACIONES A LOS ICONOS DE NOSOTROS */
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+
+/* FIN NOSOTROS */
+
+
+/* INICIO HABITACIONES */
+
+.contenedor_slider {
+    /* HIDDEN, PARA QUE LAS IMAGENES QUE ESTA FUERA DE LOS 960PX, NO SE VEAN Y MARGIN:AUTO PARA QUE SE CENTRE*/
+    width: 960px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.sliderul {
+    /* DISPLAY FLEX PARA QUE SE PONGAN UNO A LADO DE OTRO, Y EL WIDTH AL %300 YA QUE SON 3 IMAGENES AL 100% */
+    display: flex;
+    width: 300%;
+    padding: 0;
+    margin: 0;
+    animation: pasedeimg;
+    /*NOMBRE DE LA ANIMACION*/
+    animation-duration: 10s;
+    /*TIEMPO DE LA ANIMACION*/
+    animation-iteration-count: infinite;
+    /*LAS VECES QUE SE VA A REPETIR*/
+    animation-direction: alternate;
+    /*LA DIRECCION, VA Y VIENE*/
+    animation-timing-function: ease-in-out;
+    /*COMO SE ACOMODA LA ANIMACION A LLEGAR A LOS BORDES*/
+}
+
+.sliderli {
+    /* width: 100%; */
+    list-style: none;
+}
+
+.habitaciones {
+    /* BLOQUE A LA IMAGEN, PARA QUE SE PEGUE A RESERVAS Y 100% PARA QUE SE ADAPTE AL CONTENEDOR */
+    display: block;
+    width: 100%;
+}
+
+@keyframes pasedeimg {
+    /* LOS MARGENES IZQ NEGATIVOS, SON PARA QUE VENGAN LAS IMAGENES QUE ESTAN FUERA PERO QUE NO SE VEN POR LA PROPIEDAD OVERFLOW=HIDDEN Y LOS PORCENTAJES SON PARA DIVIDIR EL TIEMPO DE TRANSICION */
+    0% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: 0;
+    }
+    35% {
+        margin-left: -100%;
+    }
+    65% {
+        margin-left: -100%;
+    }
+    75% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: -200%;
+    }
+}
+
+.precio {
+    /* DECLARO ANCHO Y ALTO DE LA CAJA CON TRASPARENCIA, EL AUTO PARA QUE SE CENTRE Y EL ABSOLUTO PARA PONER EL <P> SOBRE LAS IMAGENES, DESPUES EL RESTO ES POSICION */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 50%);
+    margin: auto;
+    position: absolute;
+    top: 0;
+    font-weight: lighter;
+    font-size: 70px;
+    color: white;
+    text-align: center;
+    padding-top: 30%;
+}
+
+
+/* FIN HABITACIONES */
+
+
+/* INICIO RESERVAS */
+
+.contenedor_reservas {
+    /* RECTANGULO CONTENEDOR RESERVAS */
+    width: 960px;
+    height: 440px;
+    background-color: #979797;
+    display: block;
+}
+
+input,
+select,
+textarea {
+    /* ESTILOS A LOS INPUT, SELECT Y TEXAREA (RESERVAS Y CONTACTO)*/
+    border: grey 1px solid;
+    border-radius: 2px;
+    background-color: #565656;
+    width: 80%;
+    height: 35px;
+    margin-top: 10px;
+    color: white;
+}
+
+.datos {
+    text-align: center;
+}
+
+.formulario {
+    /* GRID (GRILLA) A FORMULARIO RESERVAS */
+    display: grid;
+    grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    grid-template-rows: 60px 60px 60px;
+    row-gap: 30px;
+    margin-top: 20px;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+
+/* USO EL NTH-CHILD PARA LLAMAR A LOS INPUT Y SELECT PARA UBICARLOS EN LA GRILLA */
+
+.datos:nth-child(1) {
+    /* EL "Nº" UBICA LA LINEA Y EL "SPAN" ESPANDE EL BLOQUE PARA QUE OCUPE TODO EL LUGAR */
+    grid-column: 1 / 4 span;
+    margin-left: -10px;
+}
+
+.datos:nth-child(2) {
+    grid-column: 5 / 4 span;
+}
+
+.datos:nth-child(3) {
+    grid-column: 9 / 4 span;
+    margin-right: -10px;
+}
+
+.datos:nth-child(4) {
+    grid-column: 1 / 3 span;
+}
+
+.datos:nth-child(5) {
+    grid-column: 4 / 3 span;
+}
+
+.datos:nth-child(6) {
+    grid-column: 7 / 3 span;
+}
+
+.datos:nth-child(7) {
+    grid-column: 10/ 3 span;
+}
+
+.datos:nth-child(8) {
+    grid-column: 4 /span 6;
+}
+
+.enviar {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 90%;
+    height: 100%;
+    margin-top: 40px;
+}
+
+
+/* FIN RESERVAS */
+
+
+/* INICIO CONTACTO */
+
+.contenedor_contacto {
+    /* RECTANGULO CONTENEDOR CONTACTO */
+    width: 960px;
+    height: 960px;
+    background-color: #979797;
+    display: block;
+}
+
+.formulario_contacto {
+    /* GRID (GRILLA) A FORMULARIO RESERVAS */
+    display: grid;
+    grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    grid-template-rows: 60px 60px 60px 60px;
+    row-gap: 30px;
+    margin-top: 40px;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+
+/* USO EL NTH-CHILD PARA LLAMAR A LOS INPUT Y A LOS DIV PARA UBICARLOS EN LA GRILLA */
+
+.contacto>.datos:nth-child(1) {
+    grid-column: 2 / 4 span;
+}
+
+.contacto>.datos:nth-child(2) {
+    grid-column: 2 / 4 span;
+}
+
+.contacto>.datos:nth-child(3) {
+    grid-column: 2 / 4 span;
+}
+
+.contacto>.datos:nth-child(4) {
+    grid-column: 7 / 4 span;
+    grid-row: 1;
+}
+
+.contacto>.datos:nth-child(5) {
+    grid-column: 7 / 4 span;
+    grid-row: 2;
+}
+
+.contacto>.datos:nth-child(6) {
+    grid-column: 7 / 4 span;
+    grid-row: 3;
+}
+
+.contacto>.datos:nth-child(7) {
+    grid-column: 7 / 4 span;
+    grid-row: 4;
+}
+
+.contacto>.datos:nth-child(8) {
+    grid-column: 11 / 2 span;
+    grid-row: 4;
+}
+
+.contacto>.datos:nth-child(9) {
+    grid-column: 6 / 1 span;
+    grid-row: 1;
+}
+
+textarea {
+    /* RESIZE PARA QUE NO SE MODIFIQUE EL TAMAÑO DE TEXAREA(CAJA DE COMENTARIO) */
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+iframe {
+    /* USO MARGIN TOP PARA SEPARAR EL MAPA DEL TITULO */
+    margin-top: 5px;
+}
+
+.enviar_msj {
+    /* ESTILO DE BOTON ENVIAR */
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 60%;
+    height: 30%;
+    margin-top: 94px;
+    margin-left: 15px;
+}
+
+.contacto>.datos {
+    /* ALINEA A LA IZQ LOS TEXTOS QUE ESTAN SOBRE EL INPUT (CONTACTO) */
+    text-align: left;
+}
+
+.datos>p>img {
+    /* PADDIND PARA LOS ICONOS DE CONTACTO */
+    padding-right: 10px;
+}
+
+.linea {
+    /* LINEA SEPARADORA */
+    width: 1px;
+    height: 400px;
+    background-color: black;
+    margin-top: -180px;
+    margin-left: 25px;
+}
+
+
+/*FIN CONTACTO */
+
+
+/* INICIO FOOTER */
+
+.footer {
+    width: 100%;
+    height: 150px;
+    background-color: #d1d1d1;
+}
+
+.footer>p {
+    /* USE MARGIN TOP "0" PARA QUE NO SE SEPARE EL FOOTER DE CONTACTO, CENTRE EL TEXTO DEL FOOTER */
+    margin-top: 0;
+    padding-left: 300px;
+    padding-top: 60px;
+}
+
+.footer>p>span {
+    font-weight: bold;
+    font-style: oblique;
+}
+
+
+/* FIN FOOTER */
